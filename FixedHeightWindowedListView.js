@@ -182,16 +182,14 @@ export default class FixedHeightWindowedListView extends Component {
       });
 
       // Scroll to the buffer area as soon as setState is complete
-      this.scrollRef.scrollWithoutAnimationTo(startY);
-      //  this.scrollRef.scrollTo({x: 0, y: startY, animation: false});
+      this.scrollRef.scrollTo({ x: 0, y: startY, animated: false });
     } else {
       this.nextSectionToScrollTo = sectionId; // Only keep the most recent value
     }
   }
 
   scrollWithoutAnimationTo(destY, destX) {
-    this.scrollRef &&
-      this.scrollRef.scrollWithoutAnimationTo(destY, destX);
+    this.scrollRef && this.scrollRef.scrollTo({ x: destX, y: destY, animated: false });
 
   }
 
@@ -323,7 +321,7 @@ export default class FixedHeightWindowedListView extends Component {
       return;
     }
 
-    let scrollDirection = this.props.isTouchingSectionPicker ? 'down' : this.scrollDirection;
+    let scrollDirection = 'down';
 
     let { firstRow, lastRow, targetFirstRow, targetLastRow } = dataSource.computeRowsToRender({
       scrollDirection,

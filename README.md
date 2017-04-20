@@ -1,3 +1,7 @@
+This package is an updated and fixed version of the original https://github.com/rgovindji/react-native-atoz-list, allowing you to use it in the 21st century.
+
+----------------
+
 This package is just a fork of the work of brentvatne: https://github.com/brentvatne/fixed-height-windowed-list-view-experiment
 
 I fixed some issues with the scrolling not working correctly and exposed the main listview component as AtoZList.
